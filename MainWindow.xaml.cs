@@ -38,9 +38,12 @@ namespace listOfStudents
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             int wiek;
-            if (int.TryParse(ageTextColumn, out wiek))
+            if (int.TryParse(ageLabel.Text, out wiek))
             {
-
+                string name = nameLabel.Text;
+                bool iIdiot = isIdiotLabel.IsChecked == true ? true : false;
+                string parentsJob = parentsJobLabel.Text;
+                Students.Add(new Student(name, wiek, iIdiot, parentsJob));
             }
         }
     }
